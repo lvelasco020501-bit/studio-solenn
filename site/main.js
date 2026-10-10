@@ -1,3 +1,4 @@
+document.documentElement.classList.add("js");
 (() => {
   const C = window.SOLENN;
   const wa = (text) => `https://wa.me/${C.whatsapp}?text=${encodeURIComponent(text)}`;
