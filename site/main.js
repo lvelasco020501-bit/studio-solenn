@@ -11,6 +11,8 @@ document.documentElement.classList.add("js");
     a.rel = "noopener";
   });
 
+  document.querySelectorAll("[data-ig]").forEach((a) => { a.href = C.instagram; });
+
   // Menú con pestañas
   const tabs = document.querySelector("[data-tabs]");
   const body = document.querySelector("[data-menu]");

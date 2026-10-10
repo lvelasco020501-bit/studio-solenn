@@ -2,11 +2,12 @@
    Para cambiar precios, servicios u horario, edita solo este archivo. */
 window.SOLENN = {
   whatsapp: "523339462753",
+  instagram: "https://www.instagram.com/studiosolenn_/",
   mensaje: "Hola, me gustaría agendar una cita en Studio Solenn.",
 
   horario: [
-    ["Lunes a viernes", "Con cita previa"],
-    ["Sábado", "10:00 – 15:00"],
+    ["Lunes a viernes", "10:00 – 19:00"],
+    ["Sábado", "10:00 – 17:00"],
     ["Domingo", "Cerrado"]
   ],
 
