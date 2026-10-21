@@ -13,6 +13,38 @@ document.documentElement.classList.add("js");
 
   document.querySelectorAll("[data-ig]").forEach((a) => { a.href = C.instagram; });
 
+  // Carrusel
+  const car = document.querySelector("[data-carousel]");
+  const track = car.querySelector("[data-track]");
+  const dots = car.querySelector("[data-dots]");
+  track.innerHTML = C.carrusel.map(([f, alt], i) => `
+    <figure class="carousel__slide" aria-roledescription="diapositiva" aria-label="${i + 1} de ${C.carrusel.length}">
+      <img src="assets/img/${f}-700.webp" srcset="assets/img/${f}-700.webp 700w, assets/img/${f}.webp 1200w"
+           sizes="(max-width: 860px) 100vw, 46vw" width="1200" height="1600" alt="${esc(alt)}"
+           ${i ? 'loading="lazy"' : ""}>
+    </figure>`).join("");
+  dots.innerHTML = C.carrusel.map((_, i) => `<button type="button" aria-label="Ir a la foto ${i + 1}"></button>`).join("");
+  const slides = [...track.children], dotBtns = [...dots.children];
+  let cur = 0;
+  const go = (i) => {
+    cur = (i + slides.length) % slides.length;
+    track.scrollTo({ left: slides[cur].offsetLeft, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+  };
+  const mark = (i) => dotBtns.forEach((d, k) => d.setAttribute("aria-current", k === i));
+  mark(0);
+  let t;
+  track.addEventListener("scroll", () => {
+    clearTimeout(t);
+    t = setTimeout(() => { cur = Math.round(track.scrollLeft / track.clientWidth); mark(cur); }, 60);
+  }, { passive: true });
+  car.querySelector("[data-prev]").addEventListener("click", () => go(cur - 1));
+  car.querySelector("[data-next]").addEventListener("click", () => go(cur + 1));
+  dotBtns.forEach((d, i) => d.addEventListener("click", () => go(i)));
+  track.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowRight") { e.preventDefault(); go(cur + 1); }
+    if (e.key === "ArrowLeft") { e.preventDefault(); go(cur - 1); }
+  });
+
   // Menú con pestañas
   const tabs = document.querySelector("[data-tabs]");
   const body = document.querySelector("[data-menu]");

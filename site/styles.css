@@ -148,30 +148,43 @@ p { margin: 0; }
   justify-content: space-between;
 }
 .hero__foot p { color: rgba(239, 228, 208, .82); font-size: .95rem; }
-.hero__media {
-  position: relative;
-  margin: 0;
-  overflow: hidden;
-}
+.hero__media { position: relative; margin: 0; overflow: hidden; background: var(--wine-deep); }
 .hero__media::after {
-  content: ""; position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgba(42,12,15,.55), transparent 22%, transparent 78%, rgba(42,12,15,.45));
+  content: ""; position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(180deg, rgba(42,12,15,.55), transparent 24%, transparent 70%, rgba(42,12,15,.6));
   pointer-events: none;
 }
-.hero__media img {
-  height: 100%;
-  object-fit: cover;
-  object-position: 40% 60%;
-  animation: settle 2.4s var(--ease) both;
+.carousel__track {
+  display: flex; height: 100%;
+  overflow-x: auto; scroll-snap-type: x mandatory;
+  scrollbar-width: none; -webkit-overflow-scrolling: touch;
 }
-.hero__media figcaption {
-  position: absolute; left: 1.25rem; bottom: 1.1rem; z-index: 1;
+.carousel__track::-webkit-scrollbar { display: none; }
+.carousel__slide { flex: 0 0 100%; scroll-snap-align: start; margin: 0; }
+.carousel__slide img { height: 100%; object-fit: cover; object-position: 40% 60%; }
+.carousel__tag, .carousel__addr {
+  position: absolute; z-index: 2; margin: 0;
   font-size: .66rem; font-stretch: 125%; letter-spacing: .2em; text-transform: uppercase;
-  line-height: 1.9;
-  color: var(--cream);
+  line-height: 1.9; color: var(--cream);
   text-shadow: 0 1px 12px rgba(0,0,0,.5);
+  pointer-events: none;
 }
-@keyframes settle { from { transform: scale(1.06); } to { transform: scale(1); } }
+.carousel__tag { top: 5.2rem; left: 1.25rem; }
+.carousel__addr { left: 1.25rem; bottom: 4.4rem; }
+.carousel__ui { position: absolute; z-index: 2; left: 1.25rem; right: 1.25rem; bottom: 1rem; justify-content: space-between; display: flex; align-items: center; gap: .6rem; }
+.carousel__btn {
+  appearance: none; cursor: pointer; width: 2.4rem; height: 2.4rem;
+  background: rgba(42,12,15,.45); color: var(--cream);
+  border: 1px solid rgba(239,228,208,.5); font: inherit; font-size: 1rem; line-height: 1;
+  transition: background .3s, color .3s;
+}
+.carousel__btn:hover { background: var(--saffron); color: var(--wine); border-color: var(--saffron); }
+.carousel__dots { display: flex; gap: .45rem; }
+.carousel__dots button {
+  appearance: none; cursor: pointer; width: .5rem; height: .5rem; padding: 0; border-radius: 50%;
+  background: transparent; border: 1px solid var(--cream); opacity: .7;
+}
+.carousel__dots button[aria-current="true"] { background: var(--cream); opacity: 1; }
 
 /* ---------- ESTUDIO ---------- */
 .studio {
