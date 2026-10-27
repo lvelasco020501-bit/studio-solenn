@@ -343,6 +343,58 @@ p { margin: 0; }
 .set__desc { grid-column: 2; font-size: .85rem; color: rgba(239, 228, 208, .72); }
 .set:hover { padding-left: .75rem; background: linear-gradient(90deg, rgba(247,187,94,.07), transparent 70%); }
 
+/* ---------- MANICURE JAPONÉS ---------- */
+.ritual {
+  background: var(--wine-deep);
+  color: var(--saffron);
+  padding: var(--section) var(--gutter);
+  display: grid; grid-template-columns: repeat(12, 1fr); column-gap: 2rem; row-gap: 2.5rem;
+}
+.ritual__head { grid-column: 1 / 7; display: grid; gap: 1.5rem; align-content: start; }
+.ritual__title {
+  font-family: var(--display); text-transform: uppercase;
+  font-size: clamp(2.8rem, 6.4vw, 6rem); line-height: .92;
+}
+.ritual__body { grid-column: 7 / 13; display: grid; gap: 1.1rem; align-content: start; padding-top: 2.2rem; color: rgba(239, 228, 208, .84); font-size: .98rem; }
+.ritual__lead { font-family: var(--display); font-size: clamp(1.3rem, 2vw, 1.7rem); line-height: 1.3; color: var(--saffron); }
+.ritual__foot {
+  margin-top: 1.4rem; padding-top: 1.4rem; border-top: 1px solid rgba(247,187,94,.25);
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.2rem;
+}
+.ritual__price { display: flex; gap: 1.2rem; align-items: baseline; font-family: var(--display); text-transform: uppercase; color: var(--saffron); font-size: 1.15rem; }
+
+.panel__note { grid-column: 6 / 13; margin-top: 1.2rem; font-size: .8rem; color: rgba(36, 23, 19, .72); }
+
+/* ---------- BEBIDAS ---------- */
+.tonics {
+  --clay-red: #8a3618;
+  background: radial-gradient(ellipse at 30% 20%, #9a4220, var(--clay-red) 55%, #6e2a12);
+  color: var(--cream);
+  padding: var(--section) var(--gutter);
+  display: grid; grid-template-columns: 1fr minmax(0, 32rem) 1fr; column-gap: 2rem; align-items: center;
+}
+.tonics__intro { grid-column: 1; display: grid; gap: 1rem; align-self: start; color: var(--saffron); }
+.tonics__text { font-family: var(--display); font-size: clamp(1.4rem, 2.2vw, 2rem); line-height: 1.2; color: var(--cream); max-width: 16rem; }
+.tonics__oval {
+  grid-column: 2;
+  background: var(--wine) url("assets/img/terciopelo.webp") center / cover;
+  border-radius: 999px;
+  padding: clamp(5rem, 9vw, 7rem) clamp(2rem, 5vw, 3.6rem) clamp(4rem, 7vw, 5.5rem);
+  box-shadow: 0 30px 60px -30px rgba(42, 12, 15, .7);
+  display: grid; gap: 1.6rem;
+}
+.tonics__title { font-family: var(--display); text-transform: uppercase; font-size: clamp(1.6rem, 2.6vw, 2.1rem); letter-spacing: .02em; }
+.tonics__list { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.15rem; }
+.drink { display: grid; grid-template-columns: 1fr auto; column-gap: 1.2rem; row-gap: .2rem; }
+.drink__name { font-family: var(--display); text-transform: uppercase; font-size: 1.1rem; letter-spacing: .02em; }
+.drink__price { font-family: var(--display); font-size: 1.1rem; }
+.drink__desc { grid-column: 1; font-size: .8rem; color: rgba(239, 228, 208, .74); }
+.tonics__notes { display: grid; gap: .5rem; font-size: .78rem; color: rgba(239, 228, 208, .74); }
+.tonics__mark {
+  justify-self: center; margin-top: 1rem; text-align: center;
+  font-family: var(--display); text-transform: uppercase; font-size: 2rem; line-height: .9; color: var(--rust);
+}
+
 /* ---------- GALERÍA ---------- */
 .gallery {
   background: var(--cream);
@@ -499,6 +551,15 @@ p { margin: 0; }
   .g--quote { grid-column: 1 / -1; grid-row: auto; padding: 1.5rem 0 0; }
 
   .steps__list { grid-template-columns: 1fr; }
+
+  .ritual { grid-template-columns: 1fr; }
+  .ritual__head, .ritual__body { grid-column: 1; }
+  .ritual__body { padding-top: 0; }
+  .panel__note { grid-column: 1; }
+
+  .tonics { grid-template-columns: 1fr; row-gap: 2.5rem; }
+  .tonics__intro, .tonics__oval { grid-column: 1; }
+  .tonics__oval { border-radius: 12rem; }
 
   .visit { grid-template-columns: 1fr; }
   .visit__map { min-height: 22rem; }

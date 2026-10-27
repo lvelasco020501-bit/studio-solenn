@@ -19,17 +19,24 @@ window.SOLENN = {
     ["estudio-tina", "Tina de cerámica blanca bajo el banco de pedicure"]
   ],
 
+  // Precios según "SERVICIOS STUDIO SOLENN 2026" (versión de 12 páginas, oct 2026).
   menu: [
     {
-      id: "manicure-pedicure",
-      titulo: "Manicure & Pedicure",
+      id: "manicure",
+      titulo: "Manicure",
       servicios: [
-        ["Manicure en seco", "Preparación de cutícula, limado y acabado natural.", "$320"],
+        ["Manicure en seco", "Manicura completa en seco, preparación de cutícula y limado.", "$320"],
         ["Manicure Spa", "Manicura completa, soak con sales, exfoliación, mascarilla, hidratación.", "$400"],
-        ["Manicure Japonés", "Manicura en seco, pulido y tratamiento nutritivo para uñas naturales.", "$350"],
-        ["Pedicure Express", "Preparación de uñas y cutícula, limado, acabado natural.", "$350"],
-        ["Pedicure Spa", "Pedicura completa, exfoliación, mascarilla, hidratación.", "$450"],
-        ["Pedicure Gel", "Preparación de uña natural y esmaltado en gel sobre uña natural.", "$390"]
+        ["Manicure Japonés", "Manicura en seco, pulido y tratamiento nutritivo para uñas naturales.", "$380"]
+      ]
+    },
+    {
+      id: "pedicure",
+      titulo: "Pedicure",
+      servicios: [
+        ["Pedicure en seco", "Pedicura completa en seco, preparación de cutícula y limado.", "$400"],
+        ["Pedicure Spa", "Pedicura completa, exfoliación, mascarilla, hidratación.", "$480"],
+        ["Pedicure Gel", "Preparación de uña natural y esmaltado en gel sobre uña natural.", "$290"]
       ]
     },
     {
@@ -58,7 +65,8 @@ window.SOLENN = {
         ["Reparación acrílico", "Por uña.", "$80"],
         ["Reparación rubber", "Por uña.", "$55"],
         ["Reparación gel", "Por uña.", "$35"]
-      ]
+      ],
+      nota: "No realizamos retoques en trabajos de otros salones. En ese caso es necesario retirar el producto y volver a aplicarlo."
     },
     {
       id: "nail-art",
@@ -75,10 +83,25 @@ window.SOLENN = {
   ],
 
   sets: [
-    ["Solenn Ritual", "Manicure Spa + Gel + Tratamiento", "$660"],
-    ["Solenn Classic", "Manicure Express + Rubber + Diseño", "$760"],
-    ["Solenn Essential", "Manicure Express + Soft Gel + Diseño o Efecto", "$870"],
-    ["Solenn Reset", "Retiro + Manicure Express + Gel", "$780"],
-    ["Solenn Full Edit", "Manicure Spa + Gel + Pedicure Spa + Gel", "$1,280"]
+    ["Solenn Mani Ritual", "Manicure Spa + Gel + Tratamiento", "$650"],
+    ["Solenn Pedi Ritual", "Pedicure Spa + Gel + Tratamiento", "$780"],
+    ["Solenn Classic", "Manicure en seco + Rubber + Diseño sencillo", "$750"],
+    ["Solenn Essential", "Manicure en seco + Soft Gel + Diseño sencillo o Efecto", "$860"],
+    ["Solenn Reset", "Retiro + Manicure en seco + Gel", "$690"],
+    ["Solenn Full Edit", "Manicure Spa + Gel + Pedicure Spa + Gel", "$1,280"],
+    ["Solenn Her & Him", "For her: Manicure en seco + Gel · For him: Manicure japonés", "$870"]
+  ],
+
+  // Menú de bebidas (Wellness Tonics)
+  bebidas: [
+    ["Berry Fizz", "Bebida burbujeante de frutos rojos con notas de flor de jamaica y un toque de limón, enriquecida con colágeno y vitamina C.", "$80"],
+    ["Vainilla Cloud", "Shaken cold brew con foam de colágeno y sabor a vainilla.", "$90"],
+    ["Iced Latte", "", "$70"],
+    ["Cold Brew", "", "$60"],
+    ["Matcha Latte", "", "$80"]
+  ],
+  bebidasNotas: [
+    "Agrega leche vegetal por $15 más (almendra o avena).",
+    "Agua y té de cortesía."
   ]
 };

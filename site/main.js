@@ -4,6 +4,12 @@ document.documentElement.classList.add("js");
   const wa = (text) => `https://wa.me/${C.whatsapp}?text=${encodeURIComponent(text)}`;
   const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 
+  document.querySelectorAll("[data-wa-msg]").forEach((a) => {
+    a.href = wa(a.dataset.waMsg);
+    a.target = "_blank";
+    a.rel = "noopener";
+  });
+
   // Enlaces generales de WhatsApp
   document.querySelectorAll("[data-wa]").forEach((a) => {
     a.href = wa(C.mensaje);
@@ -69,6 +75,7 @@ document.documentElement.classList.add("js");
     <div class="panel" role="tabpanel" id="panel-${cat.id}" aria-labelledby="tab-${cat.id}" ${i ? "hidden" : ""}>
       <h3 class="panel__title">${esc(cat.titulo).replace(" &amp; ", "<br>&amp; ")}</h3>
       <ul class="items">${cat.servicios.map(row).join("")}</ul>
+      ${cat.nota ? `<p class="panel__note">* ${esc(cat.nota)}</p>` : ""}
     </div>`).join("");
 
   const buttons = [...tabs.querySelectorAll("button")];
@@ -101,6 +108,15 @@ document.documentElement.classList.add("js");
         <span class="set__price">${esc(price)}</span>
       </a>
     </li>`).join("");
+
+  // Bebidas
+  document.querySelector("[data-drinks]").innerHTML = C.bebidas.map(([name, desc, price]) => `
+    <li class="drink">
+      <span class="drink__name">${esc(name)}</span>
+      <span class="drink__price">${esc(price)}</span>
+      ${desc ? `<span class="drink__desc">${esc(desc)}</span>` : ""}
+    </li>`).join("");
+  document.querySelector("[data-drinks-notes]").innerHTML = C.bebidasNotas.map((n) => `<p>${esc(n)}</p>`).join("");
 
   // Horario
   document.querySelector("[data-hours]").innerHTML = C.horario
