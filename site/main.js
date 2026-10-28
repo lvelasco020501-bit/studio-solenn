@@ -109,6 +109,29 @@ document.documentElement.classList.add("js");
       </a>
     </li>`).join("");
 
+  // Productos
+  const bottle = `<svg class="product__art" viewBox="0 0 120 220" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.4">
+      <path d="M52 10h16a6 6 0 0 1 6 6v22H46V16a6 6 0 0 1 6-6Z"/>
+      <path d="M44 38h32v14H44z"/>
+      <path d="M48 52h24v10c0 4 10 8 18 14 6 5 8 10 8 18v96a12 12 0 0 1-12 12H34a12 12 0 0 1-12-12V94c0-8 2-13 8-18 8-6 18-10 18-14Z"/>
+      <path d="M34 118h52M34 168h52"/>
+      <text x="60" y="140" text-anchor="middle" font-size="9" letter-spacing="2" fill="currentColor" stroke="none" font-family="Marcellus, serif">STUDIO</text>
+      <text x="60" y="152" text-anchor="middle" font-size="9" letter-spacing="2" fill="currentColor" stroke="none" font-family="Marcellus, serif">SOLENN</text>
+    </svg>`;
+  document.querySelector("[data-products]").innerHTML = C.productos.map((p) => `
+    <article class="product reveal">
+      <div class="product__media">${bottle}</div>
+      <div class="product__body">
+        <h3 class="product__name">${esc(p.nombre)}</h3>
+        <p class="product__desc">${esc(p.descripcion)}</p>
+        ${p.precio ? `<p class="product__price">${esc(p.precio)}</p>` : ""}
+        <div class="product__actions">
+          <a class="btn btn--solid" href="${wa(`Hola, me gustaría agregar el ${p.nombre} a mi cita.`)}" target="_blank" rel="noopener">Agregar a mi cita</a>
+          <a class="btn btn--line" href="${wa(`Hola, me gustaría ordenar el ${p.nombre}.`)}" target="_blank" rel="noopener">Ordenar</a>
+        </div>
+      </div>
+    </article>`).join("");
+
   // Bebidas
   document.querySelector("[data-drinks]").innerHTML = C.bebidas.map(([name, desc, price]) => `
     <li class="drink">

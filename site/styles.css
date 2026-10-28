@@ -73,7 +73,7 @@ p { margin: 0; }
   -webkit-backdrop-filter: blur(10px);
   padding-block: .7rem;
 }
-.nav__links { display: flex; gap: 2rem; }
+.nav__links { display: flex; gap: 2rem; white-space: nowrap; }
 .nav__links a, .nav__cta {
   font-size: .7rem; font-weight: 500; font-stretch: 125%;
   letter-spacing: .2em; text-transform: uppercase; text-decoration: none;
@@ -116,9 +116,7 @@ p { margin: 0; }
 /* ---------- HERO ---------- */
 .hero {
   position: relative;
-  height: 100vh;
-  height: 100svh;
-  min-height: 520px;
+  min-height: max(100svh, 520px);
   display: grid;
   grid-template-columns: 1.15fr 1fr;
   background: var(--wine) url("assets/img/terciopelo.webp") center / cover;
@@ -144,12 +142,14 @@ p { margin: 0; }
 }
 .hero__foot {
   display: grid;
-  grid-template-columns: minmax(0, 24rem) auto;
+  grid-template-columns: minmax(0, 27rem) auto;
   align-items: end;
   gap: 2rem;
   justify-content: space-between;
 }
-.hero__foot p { color: rgba(239, 228, 208, .82); font-size: clamp(.95rem, 1.1vw, 1.1rem); }
+.hero__copy { display: grid; gap: .9rem; }
+.hero__copy p { color: rgba(239, 228, 208, .82); font-size: clamp(.92rem, 1vw, 1.05rem); }
+.hero__copy p:first-child { font-family: var(--display); font-size: clamp(1.1rem, 1.4vw, 1.35rem); line-height: 1.35; color: var(--cream); }
 .hero__media { position: relative; margin: 0; overflow: hidden; background: var(--wine-deep); }
 .hero__media::after {
   content: ""; position: absolute; inset: 0; z-index: 1;
@@ -368,7 +368,7 @@ p { margin: 0; }
 .ritual__body { grid-column: 7 / 13; display: grid; gap: 1.1rem; align-content: start; padding-top: 2.2rem; color: rgba(239, 228, 208, .84); font-size: .98rem; }
 .ritual__lead { font-family: var(--display); font-size: clamp(1.3rem, 2vw, 1.7rem); line-height: 1.3; color: var(--saffron); }
 .ritual__foot {
-  margin-top: 1.4rem; padding-top: 1.4rem; border-top: 1px solid rgba(247,187,94,.25);
+  margin-top: 1rem;
   display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.2rem;
 }
 .ritual__price { display: flex; gap: 1.2rem; align-items: baseline; font-family: var(--display); text-transform: uppercase; color: var(--saffron); font-size: 1.15rem; }
@@ -382,6 +382,35 @@ p { margin: 0; }
   font-size: .64rem; font-weight: 500; font-stretch: 125%; letter-spacing: .22em; text-transform: uppercase; color: var(--saffron);
 }
 .ritual__photo figcaption::before { content: ""; width: 1.6rem; height: 1px; background: currentColor; opacity: .6; }
+
+/* ---------- PRODUCTOS ---------- */
+.products {
+  background: var(--cream);
+  color: var(--rust);
+  padding: var(--section) var(--gutter);
+  display: grid; grid-template-columns: repeat(12, 1fr); column-gap: 2rem; row-gap: 2.5rem;
+}
+.products__head { grid-column: 1 / 5; display: grid; gap: 1.2rem; align-content: start; }
+.products__title { font-family: var(--display); text-transform: uppercase; font-size: clamp(2.4rem, 5vw, 4.4rem); line-height: .92; }
+.products__list { grid-column: 5 / 13; display: grid; gap: 2rem; }
+.product {
+  display: grid; grid-template-columns: minmax(9rem, 14rem) 1fr; gap: clamp(1.5rem, 4vw, 3.5rem); align-items: center;
+  border-top: 1px solid rgba(120, 46, 17, .25); padding-top: 2rem;
+}
+.product__media {
+  aspect-ratio: 3 / 4; display: grid; place-items: center;
+  background: var(--wine) url("assets/img/terciopelo.webp") center / cover; color: var(--saffron);
+}
+.product__art { width: 46%; height: auto; }
+.product__body { display: grid; gap: 1rem; justify-items: start; }
+.product__name { font-family: var(--display); text-transform: uppercase; font-size: clamp(1.5rem, 2.6vw, 2.2rem); line-height: 1.05; }
+.product__desc { color: var(--ink); font-size: .95rem; max-width: 28rem; }
+.product__price { font-family: var(--display); font-size: 1.3rem; }
+.product__actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: .5rem; }
+.products .btn--solid { background: var(--wine); border-color: var(--wine); color: var(--saffron); }
+.products .btn--solid:hover { background: transparent; color: var(--wine); }
+.products .btn--line { border-color: var(--wine); color: var(--wine); }
+.products .btn--line:hover { background: var(--wine); color: var(--saffron); }
 
 /* ---------- BEBIDAS ---------- */
 .tonics {
@@ -533,6 +562,17 @@ p { margin: 0; }
 .js .reveal.is-in { opacity: 1; transform: none; }
 
 /* ---------- RESPONSIVE ---------- */
+@media (max-width: 1200px) and (min-width: 861px) {
+  .nav__links { gap: .9rem; }
+  .nav__links a, .nav__cta { font-size: .6rem; letter-spacing: .1em; }
+}
+@media (max-height: 720px) and (min-width: 861px) {
+  .hero__title { font-size: clamp(2.5rem, min(7vw, 10.5vh), 5rem); }
+  .hero__copy { gap: .6rem; }
+  .hero__copy p { font-size: .86rem; line-height: 1.5; }
+  .hero__copy p:first-child { font-size: 1.05rem; }
+  .hero__text { padding-top: 5rem; padding-bottom: 1.5rem; }
+}
 @media (max-width: 1024px) {
   .hero__foot { grid-template-columns: 1fr; }
   .menu__note { grid-column: 1 / -1; }
@@ -577,6 +617,12 @@ p { margin: 0; }
   .ritual__body { padding-top: 0; }
   .ritual__photos { grid-column: 1; }
   .panel__note { grid-column: 1; }
+
+  .products { grid-template-columns: 1fr; }
+  .products__head, .products__list { grid-column: 1; }
+  .product { grid-template-columns: 1fr; }
+  .product__media { aspect-ratio: 16 / 10; }
+  .product__art { width: 22%; }
 
   .tonics { grid-template-columns: 1fr; row-gap: 2.5rem; }
   .tonics__intro, .tonics__oval { grid-column: 1; }

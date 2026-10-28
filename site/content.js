@@ -92,6 +92,15 @@ window.SOLENN = {
     ["Solenn Her & Him", "For her: Manicure en seco + Gel · For him: Manicure japonés", "$870"]
   ],
 
+  // Productos a la venta. "precio" vacío = no se muestra.
+  productos: [
+    {
+      nombre: "Aceite de cutícula",
+      descripcion: "Nutre e hidrata la cutícula para mantener tus uñas impecables entre cada cita.",
+      precio: ""
+    }
+  ],
+
   // Menú de bebidas (Wellness Tonics)
   bebidas: [
     ["Berry Fizz", "Bebida burbujeante de frutos rojos con notas de flor de jamaica y un toque de limón, enriquecida con colágeno y vitamina C.", "$80"],

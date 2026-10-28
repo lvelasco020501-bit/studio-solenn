@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,300..600&family=Marcellus&display=swap" rel="stylesheet">
   <link rel="preload" as="image" href="assets/img/c-pedicure-700.webp">
-  <link rel="stylesheet" href="styles.css?v=202610272214">
+  <link rel="stylesheet" href="styles.css?v=202610281638">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -47,8 +47,9 @@
 
   <header class="nav" data-nav>
     <nav class="nav__links" aria-label="Principal">
-      <a href="#estudio">Estudio</a>
-      <a href="#servicios">Servicios</a>
+      <a href="#estudio">El servicio</a>
+      <a href="#servicios">Menú</a>
+      <a href="#productos">Productos</a>
       <a href="#bebidas">Bebidas</a>
       <a href="#visita">Visita</a>
     </nav>
@@ -66,7 +67,10 @@
         <p class="eyebrow rise" style="--d:.1s">Manicure · Pedicure · Nail art</p>
         <h1 class="hero__title rise" style="--d:.25s">Self care,<br>curated<br>for you.</h1>
         <div class="hero__foot rise" style="--d:.5s">
-          <p>Enfocado en el cuidado y la belleza. Manicure, pedicure y nail art en Providencia, Guadalajara. El servicio se enfoca en ser eficaces sin perder calidad, para disfrutar cada segundo que vives ahí.</p>
+          <div class="hero__copy">
+            <p>Enfocado en el cuidado y la belleza, curado para cada una de ustedes.</p>
+            <p>Estudio de manicure, pedicure y nail art ubicado en Providencia, Guadalajara; ofrecemos un servicio enfocado en el cuidado de los detalles, calidad y eficiencia, en un espacio creado para ti.</p>
+          </div>
           <div class="actions">
             <a class="btn btn--solid" data-wa href="#">Agendar</a>
             <a class="btn btn--line" href="#servicios">Servicios</a>
@@ -88,7 +92,7 @@
     <!-- ESTUDIO -->
     <section class="studio" id="estudio">
       <div class="studio__grid">
-        <p class="label reveal">El estudio</p>
+        <p class="label reveal">El servicio</p>
         <figure class="studio__img studio__img--a reveal">
           <img src="assets/img/estudio-pedicure-800.webp" srcset="assets/img/estudio-pedicure-800.webp 800w, assets/img/estudio-pedicure.webp 1125w" sizes="(max-width: 860px) 100vw, 55vw" width="1125" height="844" loading="lazy" alt="Área de pedicure: dos sillones de terciopelo, espejo con el logo y canasta de toallas al centro">
           <figcaption>Pedicure</figcaption>
@@ -107,12 +111,11 @@
         <h2 id="ritual-title" class="ritual__title reveal">The Japanese<br>Manicure<br>Ritual</h2>
       </div>
       <div class="ritual__body reveal">
-        <p class="ritual__lead">Los primeros y únicos en Guadalajara en traer la manicura japonesa.</p>
+        <p class="ritual__lead">Los primeros en Guadalajara en traer la manicura japonesa.</p>
         <p>Inspirada en la tradición japonesa del cuidado natural de las uñas, esta técnica revela un delicado brillo rosado efecto perla, sin esmaltes ni geles.</p>
         <p>A través de un ritual de pulido con pastas y polvos especiales, enriquecidos con vitaminas y minerales, realzamos la belleza natural de tus uñas mientras fortalecemos y acondicionamos la uña natural, para conseguir un acabado luminoso, suave y naturalmente impecable.</p>
         <p>Una experiencia diferente para quienes creen que el verdadero lujo está en los detalles.</p>
         <div class="ritual__foot">
-          <p class="ritual__price"><span>Manicure Japonés</span><span>$380</span></p>
           <a class="btn btn--solid" data-wa-msg="Hola, me gustaría agendar: Manicure Japonés." href="#">Agendar</a>
         </div>
       </div>
@@ -126,6 +129,15 @@
           <figcaption>El resultado</figcaption>
         </figure>
       </div>
+    </section>
+
+    <!-- PRODUCTOS -->
+    <section class="products" id="productos" aria-labelledby="products-title">
+      <div class="products__head">
+        <p class="label reveal">Productos</p>
+        <h2 id="products-title" class="products__title reveal">Cuidado<br>en casa</h2>
+      </div>
+      <div class="products__list" data-products></div>
     </section>
 
     <!-- SERVICIOS -->
@@ -142,7 +154,6 @@
     <!-- SETS -->
     <section class="sets" id="sets" aria-labelledby="sets-title">
       <div class="sets__head">
-        <p class="label">Combinaciones de la casa</p>
         <h2 id="sets-title" class="sets__title reveal">Solenn<br>Sets</h2>
       </div>
       <ol class="sets__list" data-sets></ol>
@@ -152,7 +163,7 @@
     <section class="tonics" id="bebidas" aria-labelledby="tonics-title">
       <div class="tonics__intro">
         <p class="label reveal">Mientras te consentimos</p>
-        <p class="tonics__text reveal">Acompaña tu cita con una bebida de la casa.</p>
+        <p class="tonics__text reveal">Disfruta de una bebida, pensada para ti.</p>
       </div>
       <div class="tonics__oval reveal">
         <h2 id="tonics-title" class="tonics__title">Wellness Tonics</h2>
@@ -232,7 +243,7 @@
 
   <a class="wa-float" data-wa href="#" aria-label="Agendar por WhatsApp">Agendar</a>
 
-  <script src="content.js?v=202610272214"></script>
-  <script src="main.js?v=202610272214"></script>
+  <script src="content.js?v=202610281638"></script>
+  <script src="main.js?v=202610281638"></script>
 </body>
 </html>
