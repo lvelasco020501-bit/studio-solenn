@@ -202,7 +202,7 @@ p { margin: 0; }
   row-gap: 2.5rem;
   max-width: 1400px; margin: 0 auto;
 }
-.studio .label { grid-column: 1 / 4; padding-top: .6rem; }
+.studio .label { grid-column: 1 / -1; }
 .studio__lead {
   grid-column: 4 / 12;
   font-family: var(--display);
@@ -218,8 +218,8 @@ p { margin: 0; }
   align-self: start;
 }
 .studio__body { grid-row: 2; }
-.studio__img--a { grid-column: 1 / 8; grid-row: 3; align-self: end; margin-top: 3rem; }
-.studio__img--b { grid-column: 8 / 13; grid-row: 3; align-self: end; margin-top: 3rem; }
+.studio__img--a { grid-column: 1 / 8; grid-row: 2; align-self: end; }
+.studio__img--b { grid-column: 8 / 13; grid-row: 2; align-self: end; }
 .studio__img--a img { aspect-ratio: 4 / 3; object-fit: cover; }
 .studio__img--b img { aspect-ratio: 4 / 5; object-fit: cover; }
 .studio__img figcaption, .g figcaption {
@@ -374,6 +374,14 @@ p { margin: 0; }
 .ritual__price { display: flex; gap: 1.2rem; align-items: baseline; font-family: var(--display); text-transform: uppercase; color: var(--saffron); font-size: 1.15rem; }
 
 .panel__note { grid-column: 6 / 13; margin-top: 1.2rem; font-size: .8rem; color: rgba(36, 23, 19, .72); }
+
+.ritual__photos { grid-column: 7 / 13; display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1rem, 2vw, 2rem); margin-top: clamp(1rem, 3vw, 2.5rem); }
+.ritual__photo img { aspect-ratio: 3 / 2; object-fit: cover; }
+.ritual__photo figcaption {
+  margin-top: .8rem; display: flex; gap: .8rem; align-items: center;
+  font-size: .64rem; font-weight: 500; font-stretch: 125%; letter-spacing: .22em; text-transform: uppercase; color: var(--saffron);
+}
+.ritual__photo figcaption::before { content: ""; width: 1.6rem; height: 1px; background: currentColor; opacity: .6; }
 
 /* ---------- BEBIDAS ---------- */
 .tonics {
@@ -567,6 +575,7 @@ p { margin: 0; }
   .ritual { grid-template-columns: 1fr; }
   .ritual__head, .ritual__body { grid-column: 1; }
   .ritual__body { padding-top: 0; }
+  .ritual__photos { grid-column: 1; }
   .panel__note { grid-column: 1; }
 
   .tonics { grid-template-columns: 1fr; row-gap: 2.5rem; }
