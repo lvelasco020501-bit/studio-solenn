@@ -138,7 +138,7 @@ p { margin: 0; }
 .hero__title {
   font-family: var(--display);
   text-transform: uppercase;
-  font-size: clamp(2.5rem, min(6vw, 11vh), 6rem);
+  font-size: clamp(2.8rem, min(7.2vw, 13vh), 7.2rem);
   line-height: .9;
   letter-spacing: -.005em;
 }
@@ -149,7 +149,7 @@ p { margin: 0; }
   gap: 2rem;
   justify-content: space-between;
 }
-.hero__foot p { color: rgba(239, 228, 208, .82); font-size: .95rem; }
+.hero__foot p { color: rgba(239, 228, 208, .82); font-size: clamp(.95rem, 1.1vw, 1.1rem); }
 .hero__media { position: relative; margin: 0; overflow: hidden; background: var(--wine-deep); }
 .hero__media::after {
   content: ""; position: absolute; inset: 0; z-index: 1;
