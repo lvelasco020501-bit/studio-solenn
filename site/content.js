@@ -13,10 +13,10 @@ window.SOLENN = {
 
   // Carrusel del inicio. Para cambiar fotos: sube el archivo a assets/img/ y edita esta lista.
   carrusel: [
-    ["estudio-sillones", "Dos sillones de terciopelo mostaza con tinas de pedicure y luz cálida bajo el escalón"],
-    ["estudio-luz", "Estación de pedicure con banco de piel y tina de cerámica"],
-    ["estudio-noche", "El estudio iluminado solo por la luz del escalón"],
-    ["estudio-tina", "Tina de cerámica blanca bajo el banco de pedicure"]
+    ["c-pedicure", "Área de pedicure con sillones de terciopelo mostaza, tinas de cerámica y luz cálida bajo el escalón"],
+    ["c-manicura", "Mesa de manicure sobre una roca natural, con lámparas plateadas y sillas de madera"],
+    ["c-pedi-color", "Pedicure en tono vino con sandalias de cebra"],
+    ["c-charola", "Charola de acero grabada con el logo de Studio Solenn, tijeras y fresas"]
   ],
 
   // Precios según "SERVICIOS STUDIO SOLENN 2026" (versión de 12 páginas, oct 2026).

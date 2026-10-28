@@ -1,11 +1,11 @@
 """Gradación uniforme para las fotos de Studio Solenn.
 Iguala exposición, levanta negros (look mate), tono cálido y grano fino."""
-import sys, numpy as np
+import os, sys, numpy as np
 from pathlib import Path
 from PIL import Image, ImageFilter
 
 SRC = Path(sys.argv[1]); OUT = Path(sys.argv[2]); OUT.mkdir(parents=True, exist_ok=True)
-TARGET_MEAN = 0.37
+TARGET_MEAN = float(os.environ.get("TARGET_MEAN", 0.37))
 rng = np.random.default_rng(7)
 
 def grade(im):
