@@ -116,7 +116,9 @@ p { margin: 0; }
 /* ---------- HERO ---------- */
 .hero {
   position: relative;
-  min-height: 100svh;
+  height: 100vh;
+  height: 100svh;
+  min-height: 520px;
   display: grid;
   grid-template-columns: 1.15fr 1fr;
   background: var(--wine) url("assets/img/terciopelo.webp") center / cover;
@@ -129,14 +131,14 @@ p { margin: 0; }
 .hero__text {
   position: relative;
   display: flex; flex-direction: column; justify-content: center;
-  gap: 2.2rem;
-  padding: 7rem var(--gutter) 3rem;
+  gap: clamp(1.2rem, 3.5vh, 2.2rem);
+  padding: 5.5rem var(--gutter) 2rem;
   color: var(--saffron);
 }
 .hero__title {
   font-family: var(--display);
   text-transform: uppercase;
-  font-size: clamp(2.5rem, 6vw, 6rem);
+  font-size: clamp(2.5rem, min(6vw, 11vh), 6rem);
   line-height: .9;
   letter-spacing: -.005em;
 }
@@ -155,7 +157,8 @@ p { margin: 0; }
   pointer-events: none;
 }
 .carousel__track {
-  display: flex; height: 100%;
+  position: absolute; inset: 0;
+  display: flex;
   overflow-x: auto; scroll-snap-type: x mandatory;
   scrollbar-width: none; -webkit-overflow-scrolling: touch;
 }
@@ -534,7 +537,7 @@ p { margin: 0; }
   .nav .wordmark { grid-column: 1; align-items: flex-start; }
   .nav__cta { grid-column: 3; }
 
-  .hero { grid-template-columns: 1fr; min-height: auto; }
+  .hero { grid-template-columns: 1fr; height: auto; min-height: 0; }
   .hero__text { padding-top: 7.5rem; padding-bottom: 2.5rem; }
   .hero__media { aspect-ratio: 4 / 5; }
 
