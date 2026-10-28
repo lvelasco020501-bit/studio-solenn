@@ -136,7 +136,7 @@ p { margin: 0; }
 .hero__title {
   font-family: var(--display);
   text-transform: uppercase;
-  font-size: clamp(3.2rem, 8.4vw, 8.6rem);
+  font-size: clamp(2.5rem, 6vw, 6rem);
   line-height: .9;
   letter-spacing: -.005em;
 }
