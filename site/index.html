@@ -95,10 +95,12 @@
           <p>Trabajamos manos y pies con técnicas que cuidan la uña natural, desde un manicure en seco hasta extensiones y nail art.</p>
         </div>
         <figure class="studio__img studio__img--a reveal">
-          <img src="assets/img/detalle-espejo-v2.webp" width="470" height="600" loading="lazy" alt="Espejo plateado con el logo de Studio Solenn y canasta de toallas entre los sillones de pedicure">
+          <img src="assets/img/estudio-pedicure-800.webp" srcset="assets/img/estudio-pedicure-800.webp 800w, assets/img/estudio-pedicure.webp 1125w" sizes="(max-width: 860px) 100vw, 55vw" width="1125" height="844" loading="lazy" alt="Área de pedicure: dos sillones de terciopelo, espejo con el logo y canasta de toallas al centro">
+          <figcaption>Pedicure</figcaption>
         </figure>
         <figure class="studio__img studio__img--b reveal">
-          <img src="assets/img/estudio-sillas-700.webp" srcset="assets/img/estudio-sillas-700.webp 700w, assets/img/estudio-sillas.webp 1200w" sizes="(max-width: 860px) 70vw, 33vw" width="1200" height="1400" loading="lazy" alt="Mesa de manicure de piedra con lámparas plateadas y sillas de madera">
+          <img src="assets/img/estudio-manicure-640.webp" srcset="assets/img/estudio-manicure-640.webp 640w, assets/img/estudio-manicure.webp 1000w" sizes="(max-width: 860px) 100vw, 38vw" width="1000" height="1250" loading="lazy" alt="Mesa de manicure sobre una roca natural, con lámparas plateadas y sillas de madera">
+          <figcaption>Manicure</figcaption>
         </figure>
       </div>
     </section>
@@ -126,7 +128,7 @@
       <header class="menu__head">
         <p class="label">Nuestros servicios</p>
         <h2 id="menu-title" class="menu__title">El menú</h2>
-        <p class="menu__note">Toca cualquier servicio para agendarlo por WhatsApp. Precios en pesos mexicanos.</p>
+        <p class="menu__note">Toca cualquier servicio para agendarlo por WhatsApp.<span>Precios en pesos mexicanos.</span></p>
       </header>
       <nav class="menu__tabs" aria-label="Categorías" data-tabs></nav>
       <div class="menu__body" data-menu></div>
@@ -156,12 +158,19 @@
     </section>
 
     <!-- GALERÍA -->
-    <section class="gallery" aria-label="Galería del estudio">
-      <figure class="g g--1 reveal"><img src="assets/img/vidrio-logo-700.webp" srcset="assets/img/vidrio-logo-700.webp 700w, assets/img/vidrio-logo.webp 1200w" sizes="(max-width: 860px) 100vw, 56vw" width="1200" height="900" loading="lazy" alt="Logotipo de Studio Solenn sobre un muro de bloques de vidrio"></figure>
-      <figure class="g g--2 reveal"><img src="assets/img/estudio-escalon-700.webp" width="700" height="697" loading="lazy" alt="Pufs de piel vino junto al escalón iluminado del área de pedicure"></figure>
-      <p class="g g--quote reveal">“Un lugar para sentarte, quedarte un rato y salir sintiéndote&nbsp;tú.”</p>
-      <figure class="g g--3 reveal"><img src="assets/img/manos-ritual-700.webp" width="700" height="561" loading="lazy" alt="Pulido de manicure japonés con polvo rosado sobre una toalla de Studio Solenn"></figure>
-      <figure class="g g--4 reveal"><img src="assets/img/manos-resultado-700.webp" width="700" height="468" loading="lazy" alt="Uñas naturales con acabado de manicure japonés"></figure>
+    <section class="gallery" aria-label="Nuestro trabajo">
+      <div class="gallery__text">
+        <p class="label reveal">Nuestro trabajo</p>
+        <p class="g--quote reveal">“Un lugar para sentarte, quedarte un rato y salir sintiéndote&nbsp;tú.”</p>
+      </div>
+      <figure class="g g--3 reveal">
+        <img src="assets/img/manos-ritual-700.webp" width="700" height="561" loading="lazy" alt="Pulido de manicure japonés con polvo rosado sobre una toalla de Studio Solenn">
+        <figcaption>El ritual japonés</figcaption>
+      </figure>
+      <figure class="g g--4 reveal">
+        <img src="assets/img/manos-resultado-700.webp" width="700" height="468" loading="lazy" alt="Uñas naturales con acabado de manicure japonés">
+        <figcaption>Acabado natural</figcaption>
+      </figure>
     </section>
 
     <!-- CÓMO AGENDAR -->
@@ -184,7 +193,7 @@
           <p>Te recibimos con todo listo. Solo tienes que sentarte.</p>
         </li>
       </ol>
-      <a class="btn btn--solid steps__cta" data-wa href="#">Agendar por WhatsApp</a>
+      <a class="btn btn--solid steps__cta" data-wa href="#">Agenda hoy</a>
     </section>
 
     <!-- VISITA -->
@@ -213,10 +222,11 @@
         <a class="link-arrow" href="https://www.google.com/maps/place/STUDIO+SOLENN/@20.7017606,-103.3781549,17z/data=!4m6!3m5!1s0x8428af007ee0b11b:0xc8b55e86153df47f!8m2!3d20.7017606!4d-103.3781549" target="_blank" rel="noopener">Cómo llegar <span aria-hidden="true">→</span></a>
       </div>
       <div class="visit__map" data-map>
-        <img src="assets/img/estudio-piedra-700.webp" srcset="assets/img/estudio-piedra-700.webp 700w, assets/img/estudio-piedra.webp 1100w"
-             sizes="(max-width: 860px) 100vw, 55vw" width="1200" height="1600" loading="lazy"
-             alt="Mesa de manicure apoyada sobre una roca natural, con sillas de madera">
-        <button type="button" class="btn btn--solid visit__mapbtn" data-map-load>Ver mapa</button>
+        <div class="visit__card">
+          <p class="visit__mark" aria-hidden="true">Studio<br>Solenn</p>
+          <p class="visit__where">Valparaíso 2449 · Torre OTOWER, Local 6<br>Providencia, Guadalajara</p>
+          <button type="button" class="btn btn--line visit__mapbtn" data-map-load>Ver mapa</button>
+        </div>
       </div>
     </section>
 
